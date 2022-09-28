@@ -24,6 +24,8 @@ const {
   csrfMiddleware,
 } = require("./src/middlewares/middleware");
 
+const port = process.env.PORT
+
 app.use(helmet());
 
 app.use(express.urlencoded({ extended: true }));
@@ -54,8 +56,8 @@ app.use(csrfMiddleware);
 app.use(routes);
 
 app.on("pronto", () => {
-  app.listen(3000, () => {
+  app.listen(port, () => {
     console.log("Acessar agenda-simples-production.up.railway.app");
-    console.log("Servidor executando na porta 3000");
+    console.log("Servidor executando na porta"+ port);
   });
 });

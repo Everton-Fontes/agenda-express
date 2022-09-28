@@ -58,6 +58,6 @@ app.use(routes);
 app.on("pronto", () => {
   app.listen(port, () => {
     console.log("Acessar agenda-simples-production.up.railway.app");
-    console.log("Servidor executando na porta"+ port);
+    console.log("Servidor executando na porta "+ port);
   });
 });

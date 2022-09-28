@@ -1,0 +1,49 @@
+<%- include('includes/head') %> <%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Contatos</h1>
+      <p class="text-center lead">Seus contatos estão abaixo</p>
+
+      <%- include('includes/messages') %>
+
+      <div class="row">
+        <div class="col">
+          <div class="responsive-table">
+            <table class="table my-3">
+              <thead>
+                <tr>
+                  <td>Nome</td>
+                  <td>Sobrenome</td>
+                  <td>Numero</td>
+                  <td>Email</td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                <% contacts.forEach( contato => {%>
+                <tr>
+                  <td><%= contato.first_name %></td>
+                  <td><%= contato.last_name %></td>
+                  <td><%= contato.phonenumber %></td>
+                  <td><%= contato.email %></td>
+                  <td>
+                    <a href=<%= `/contatos/detail/${contato._id}` %> class="btn btn-info">
+                      edit
+                    </a>
+                  </td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>

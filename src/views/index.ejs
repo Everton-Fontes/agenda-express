@@ -1,0 +1,41 @@
+<%- include('includes/head') %> <%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Seus contatos estão abaixo</p>
+
+      <%- include('includes/messages') %>
+
+      <div class="row">
+        <div class="col">
+          <div class="responsive-table">
+            <table class="table my-3">
+              <thead>
+                <tr>
+                  <td>Nome</td>
+                  <td>Sobrenome</td>
+                  <td>Numero</td>
+                  <td>Email</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Everton</td>
+                  <td>Fontes</td>
+                  <td>1234548678</td>
+                  <td>admin@mail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>

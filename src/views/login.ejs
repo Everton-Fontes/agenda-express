@@ -1,0 +1,88 @@
+<%- include('includes/head') %> <%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Login</h1>
+      <p class="text-center lead">
+        Faça Login ou se Cadastre para acessar o painel
+      </p>
+      <%- include('includes/messages') %>
+      <div class="row">
+        <div class="col-lg">
+          <h3 class="text-center">Faça Login</h3>
+
+          <form action="/login" method="POST">
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="form-group">
+              <label for="InputEmail">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="InputEmail"
+                aria-describedby="emailHelp"
+                placeholder="Escreva seu email"
+                name="email"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Nós nunca compartilhamos seus dados!</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="InputPassword">Senha</label>
+              <input
+                type="password"
+                class="form-control"
+                id="InputPassword"
+                placeholder="Digite sua senha"
+                name="password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">
+              Login
+            </button>
+          </form>
+        </div>
+
+        <div class="col-lg">
+          <h3 class="text-center">Cadastro</h3>
+
+          <form action="/login/register" method="POST">
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="form-group">
+              <label for="InputEmailSignup">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="InputEmailSignup"
+                aria-describedby="emailHelp"
+                placeholder="Escreva seu email"
+                name="email"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Nós nunca compartilhamos seus dados!</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="InputPasswordSignup">Senha</label>
+              <input
+                type="password"
+                class="form-control"
+                id="InputPasswordSignup"
+                placeholder="Digite sua senha"
+                name="password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-large ml-auto">
+              Signup
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
